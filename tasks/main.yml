@@ -72,6 +72,7 @@
   register: customize_gnome_temp_dir
   notify: Remove temporary directory for extensions
   when: not ansible_check_mode
+  changed_when: False
 
 - name: Create a list of current enabled extensions
   become_user: "{{ gnome_user }}"
